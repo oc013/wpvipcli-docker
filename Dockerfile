@@ -2,7 +2,10 @@
 
 FROM node:current-alpine3.16
 
-RUN node -v && npm -v
+RUN apk add --update --no-cache g++ make python3 py3-pip && \
+    ln -sf python3 /usr/bin/python
+
+RUN python -V && node -v && npm -v
 
 RUN npm install -g @automattic/vip
 
