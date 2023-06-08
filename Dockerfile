@@ -9,6 +9,8 @@ RUN python -V && node -v && npm -v
 
 RUN npm install -g @automattic/vip
 
+ENV DO_NOT_TRACK=1
+
 RUN /usr/local/bin/vip -v
 
 ENTRYPOINT ["/usr/local/bin/vip"]
